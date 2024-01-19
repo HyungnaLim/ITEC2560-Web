@@ -1,6 +1,8 @@
-p {
-    color: pink;
+body {
+    background-color: black;
+    font-family: 'Georgia', 'Times New Roman', serif;
     font-size: 20px;
+    color: pink;
 }
 
 h1 {
@@ -10,28 +12,114 @@ h1 {
     font-family: 'Arial', 'Gill Sans', sans-serif;
 }
 
-body {
-    background-color: black;
-    font-family: 'Georgia', 'Times New Roman', serif;
+a {
+    color: lightcyan;
+    background-color: #d58b96;
+    text-decoration: none;
+    font-style: italic;
 }
 
 li {
     color: pink;
 }
 
-a {
-    color: midnightblue;
-    background-color: #c48a94;
-    text-decoration: none;
+ul {
+    background-color: #2b2d30;
+}
+
+/*      # for id, . for class       */
+
+#most-favorite-food {
+    color: deeppink;
+    background-color: lightgoldenrodyellow;
+    text-decoration: underline;
+}
+
+.second-favorite-food {
+    color: hotpink;
+    background-color: #d2fae8;
+}
+
+#page-title {
+    text-shadow: 4px 4px indianred;
+}
+
+#favorite-movie-title {
+    color: navajowhite;
+    text-shadow: 2px 2px #bd814f;
     font-style: italic;
 }
 
-ul {
-    background-color: #232323;
+#favorite-music-name {
+    text-shadow: 2px 2px crimson;
+    color: mediumaquamarine;
 }
 
-h2 {
+.favorite-section {
+    border: 3px darkgray solid;
+    margin: 20px;
+    padding: 15px;
+}
+
+.section-header {
     color: lightgoldenrodyellow;
     font-size: 30px;
     font-style: italic;
+}
+
+.favorite-image {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(120%);
+}
+
+.overlay {
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: gray;
+}
+
+.container {
+    position: relative;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container:hover .overlay {
+    opacity: .8;
+}
+
+.text {
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+table {
+    color: pink;
+    border-collapse: collapse;
+}
+
+th {
+    color: white;
+}
+
+td, th {
+    border: 1px dotted white;
+    padding: 15px;
 }

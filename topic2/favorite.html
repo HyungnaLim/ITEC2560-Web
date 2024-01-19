@@ -9,21 +9,61 @@
 
 <body>
 
-  <h1>Some of my favorite things</h1>
+  <h1 id="page-title">Some of my favorite things</h1>
+  <h1>by Hyungna</h1>
 
-  <h2>Favorite Movie</h2>
-  <p>My current favorite movie is 'Dune' directed by Denis Villeneuve.<br>
-      Here's a <a href="https://www.imdb.com/title/tt1160419/"> link to imdb page about this movie</a>.</p>
+  <div class="favorite-section">
+     <h2 class="section-header">Favorite Movie</h2>
+     <p>My current favorite movie is '<b><span id="favorite-movie-title">Dune</span></b>' directed by Denis Villeneuve.<br>
+      Here's a <a href="https://www.imdb.com/title/tt1160419/"> link to imdb page about this movie</a></p>
+  </div>
 
-  <h2>Favorite Music</h2>
-  <p>Ny favorite band is <a href="https://www.youtube.com/@SilicaGel">Silica Gel</a>. They are Korean indie rock band</p>
+  <div class="favorite-section">
+     <h2 class="section-header">My Favorite Band/Artist</h2>
+    <p>Ny favorite band is <b><span id="favorite-music-name">Silica Gel</span></b>. They are Korean indie rock band.<br>
+     Here's a <a href="https://www.youtube.com/@SilicaGel">link to their youtube channel</a></p>
+  </div>
 
-  <h2>Favorite Foods</h2>
-  <ul>
-      <li>Kimchi Fried Rice</li>
-      <li>Tteokbokki</li>
+  <div class="favorite-section">
+      <h2 class="section-header">My Favorite Foods</h2>
+      <ul>
+      <!-- id is for only one element, class is for multiple elements-->
+      <li id="most-favorite-food">Kimchi Fried Rice</li>
+      <li class="second-favorite-food">Tteokbokki</li>
       <li>Taco</li>
-  </ul>
+      <li class="second-favorite-food">Buldak Hot Chicken Flavor Ramen</li>
+      <li>Pho</li>
+      <li>Galbijjim</li>
+      </ul>
+  </div>
+
+  <div class="favorite-section">
+      <h2 class="section-header">Some Favorite Images</h2>
+      <p>* All images are from <a href="https://unsplash.com/ ">unsplash</a></p>
+      <div class="container">
+      <img class="favorite-image" src="beach.jpg" alt="sunset by the beach">
+          <div class="overlay">
+              <div class="text">I love beach!</div>
+          </div>
+      </div>
+      <div class="container">
+      <img class="favorite-image" src="blackcat.jpg" alt="black cat staring into space">
+          <div class="overlay">
+              <div class="text">I have a black cat. His name is Shadow.</div>
+          </div>
+      </div>
+  </div>
+
+  <div class="favorite-section">
+    <h2 class="section-header">My Favorite Books</h2>
+      <table>
+          <tr><th>Title</th> <th>Author</th> <th>Link</th></tr>
+          <tr><td>Stolen Focus: Why You Can't Pay Attention</td> <td>Johann Hari</td> <td><a href="https://www.amazon.com/Stolen-Focus-Attention-Think-Deeply/dp/0593138511">Amazon</a>, <a href="https://stolenfocusbook.com/">Website</a> </td></tr>
+          <tr><td>Crying in H Mart</td> <td>Michelle Zauner</td> <td><a href="https://www.amazon.com/Crying-Mart-Memoir-Michelle-Zauner/dp/1984898957/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1705638297&sr=1-1">Amazon</a> </td></tr>
+          <tr><td>Project Hail Mary</td> <td>Andy Weir</td> <td><a href="https://www.amazon.com/Project-Hail-Mary-Andy-Weir/dp/0593135229/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=1705639011&sr=1-1">Amazon</a> </td></tr>
+      </table>
+  </div>
+
 
 </body>
 
