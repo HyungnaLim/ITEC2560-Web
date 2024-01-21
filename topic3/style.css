@@ -1,0 +1,24 @@
+#real-alert {
+    color: red;
+    font-size: 15pt;
+}
+
+#real-alert:hover {
+    font-weight: bold;
+    background-color: yellow;
+}
+
+#test-only {
+    color: darkblue;
+    font-size: 15pt;
+}
+
+#test-only:hover {
+    font-weight: bold;
+    background-color: lightcyan;
+}
+
+.missile-link {
+    display: block;
+    margin-bottom: 20pt;
+}
