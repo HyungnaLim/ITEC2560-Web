@@ -1,0 +1,19 @@
+.header {
+    font-family: 'DM Serif Display', serif;
+}
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+    color: #3b3b3b;
+}
+
+.required {
+    font-size: 8pt;
+    color: blue;
+}
+
+.form-div {
+    background-color: #e4eef5;
+    margin-left: 15%;
+    margin-right: 15%;
+}

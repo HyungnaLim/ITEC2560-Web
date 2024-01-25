@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conference Registration Form</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+
+    <!-- CSS style -->
+    <link rel="stylesheet" href="conference_registration.css">
+
+</head>
+
+<body class="m-3">
+
+    <h2 class="header text-center mb-4">Conference Registration Form</h2>
+
+    <div class="form-div rounded-3 p-3">
+        <form>
+
+            <label for="name" class="form-label">Name <span class="required">* required</span></label>
+            <input type="text" maxlength="70" name="name" id="name" class="form-control mb-3"required>
+
+            <label for="password" class="form-label">Password <span class="required">*</span></label>
+            <input type="password" name="password" id="password" class="form-control mb-3" required>
+
+            <label for="email" class="form-label">Email <span class="required">*</span></label>
+            <input type="email" name="email" id="email" class="form-control mb-3" required>
+
+            <label for="tshirst-size" class="form-label">T-shirt size <span class="required">*</span></label>
+            <select name="tshirst-size" id="tshirst-size" class="form-control mb-3" required>
+                <option>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+            </select>
+
+            <label for="birthdate" class="form-label">Date of birth <span class="required">*</span></label>
+            <input type="date" name="birthdate" id="birthdate" class="form-control mb-3" required>
+
+            <p class="form-label">Receive email updates? <span class="required">*</span></p>
+            <div class="btn-group mb-3" role="group" aria-label="email-update-radio-group">
+                <input class="btn-check" type="radio" name="email-update" id="email-update-yes">
+                <label class="btn btn-outline-primary" for="email-update-yes">Yes</label>
+                <input class="btn-check" type="radio" name="email-update" id="email-update-no">
+                <label class="btn btn-outline-primary" for="email-update-no">No</label>
+            </div>
+
+            <p class="form-label">Choose sessions</p>
+            <div class="mb-3">
+                <input class="btn-check" type="checkbox" name="session-morning" id="session-morning" autocomplete="off" required>
+                <label class="btn btn-outline-primary" for="session-morning">morning</label>
+                <input class="btn-check" type="checkbox" name="session-afternoon" id="session-afternoon" autocomplete="off">
+                <label class="btn btn-outline-primary" for="session-afternoon">afternoon</label>
+            </div>
+
+            <label for="request" class="form-label">Special Request</label>
+            <textarea rows="7" cols="70" name="request" id="request" class="form-control mb-4"> </textarea>
+
+            <input class="btn btn-primary" type="submit">
+
+        </form>
+    </div>
+
+</body>
+
+</html>
