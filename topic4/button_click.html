@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <!-- Write HTML content here -->
+    <button>Click here!</button>
+
+
+<script>
+    // Write JavaScript here -->
+
+    let button = document.querySelector('button');
+    // 'let' is used for defining a variable
+    // 'document' means the web page
+    // 'querySelector' will find the first matching element if there's many same type of element
+
+    button.addEventListener('click', function() {
+        // function definition
+        alert('You clicked the button!');
+        button.innerHTML = 'You clicked the button!';
+        button.style.backgroundColor = 'red'; // to use CSS properties, it should be a String
+        // button.remove
+    }) // be careful with the parenthesis! (element, function() {definition} )
+
+
+</script>
+
+</body>
+
+</html>
