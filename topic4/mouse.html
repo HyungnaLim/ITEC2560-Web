@@ -10,12 +10,13 @@
 
 <script>
 
+    // define variables
     let message = document.querySelector('#mouse-me')
-
     let mouseCount = 0
 
     message.addEventListener('mouseover', function() {
-        mouseCount += 1
+        mouseCount += 1 // add up mouseCount every time mouse over happens
+        // if statement for 1 mouseCount
         if (mouseCount == 1) {
             message.innerHTML = 'Mouse has been here ' + mouseCount + ' time'
         } else {
@@ -24,6 +25,7 @@
     })
 
     message.addEventListener('mouseout', function() {
+        // show this when mouse it not over the message
         message.innerHTML = 'Your mouse is not on this message'
     })
 
