@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Club Membership</title>
+
+    <style>
+
+        .selected {
+            text-decoration: line-through ;
+            font-style: italic;
+            color: gray;
+        }
+
+        input {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 5px 5px 0px;
+            box-sizing: border-box;
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+<h1>Student Club Roster</h1>
+
+<h2>Add Students</h2>
+
+<label for="student-name">Student Name</label><input id="student-name" name="student-name">
+<br>
+<label for="student-id">Student ID</label><input id="student-id" name="student-id">
+<br>
+<label for="student-gpa">Student GPA</label><input id="student-gpa" name="student-gpa" type="number">
+<br>
+<button id="add-student">Add Student</button>
+
+<h2>Student List</h2>
+
+<p>There are
+    <span id="student-count">
+          <!-- use JavaScript to count the number of students, and show here -->
+        </span>
+    student(s) in the club.</p>
+
+<p>Click on a student's name to select them</p>
+
+<ul id="student-list">
+    <!-- use JavaScript to create li elements  -->
+</ul>
+
+<button id="remove-selected-students">Remove selected students</button>
+
+<script>
+
+    // Using JavaScript, display 0 in the span#student-count
+    let studentCount = document.querySelector('#student-count')
+    studentCount.innerHTML = '0'
+    counter = 0 // set a counter variable to zero
+
+    // define each element
+    let addButton = document.querySelector('#add-student')
+    let studentNameInput = document.querySelector('#student-name')
+    let studentIdInput = document.querySelector('#student-id')
+    let studentGPAInput = document.querySelector('#student-gpa')
+    let studentList = document.querySelector('#student-list')
+    let removeButton = document.querySelector('#remove-selected-students')
+
+    // Add a click event listener on add button
+    addButton.addEventListener('click', function() {
+
+        // save each value from input element in a variable
+        let studentName = studentNameInput.value
+        let studentID = studentIdInput.value
+        let studentGPA = studentGPAInput.value
+
+        if (studentName.length < 1) {
+            // If the name is not entered, show an alert error message and return.
+            alert('Error, please enter student name')
+            return
+        } else if (studentID.length < 1) {
+            // If the id is not entered, show an alert error message and return.
+            alert('Error, please enter student ID')
+            return
+        } else if (studentGPA.length <1 || studentGPA < 0 || studentGPA > 4) {
+            // If the GPA is not entered, or is not in the range 0-4, show an alert error message and return
+            alert('Error, please enter GPA between 0 and 4')
+            return
+        } else {
+            let newStudent = document.createElement('li') // Create a new li element
+            // Set the innerHTML of the li element to a string containing the student's name, id, and GPA using template strings
+            newStudent.innerHTML = `Name : ${studentName} | ID : ${studentID} | GPA : ${studentGPA}`
+            // Add the new li element to ul#student-list element
+            studentList.appendChild(newStudent)
+
+            // Clear the values of the three input elements
+            studentNameInput.value = ''
+            studentIdInput.value = ''
+            studentGPAInput.value = ''
+
+            counter++ // update counter
+            studentCount.innerHTML = counter // display the updated counter number
+
+            // add a event listener to the li element
+            newStudent.addEventListener('click', function() {
+                newStudent.classList.toggle('selected') // when clicked, toggle the selected class
+            })
+
+        }
+    })
+
+    // add a click event listener on remove button
+    removeButton.addEventListener('click', function() {
+        let selectedStudents = document.querySelectorAll('.selected') // select all element with the class="selected"
+        selectedStudents.forEach(function(selectedStudent) {
+            selectedStudent.remove() // remove each element
+            counter-- // update counter
+            studentCount.innerHTML = counter // display the updated counter number
+        })
+
+    })
+
+</script>
+
+</body>
+</html>
