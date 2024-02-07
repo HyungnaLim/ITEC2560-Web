@@ -26,3 +26,7 @@ console.log(text + ' There are ' + quantity + ' programmers')
 console.log('Today\'s Temperature is ' + todayTemp + 'F')
 let tempC = (todayTemp - 32) * 5 / 9
 console.log('Today\'s temperature is ' + tempC.toFixed(2) + 'C') // rounding decimals with .toFixed
+
+// using template string
+console.log(`Today's temperature is ${tempC.toFixed(2)}C
+which is equivalent to ${todayTemp}F`) // putting new line space is possible in JavaScript
