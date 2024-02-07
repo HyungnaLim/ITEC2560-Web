@@ -19,6 +19,7 @@ function shout(text) {
 function f_to_c(f, decimalPlaces) {
     let celsius = (f - 32) * 5 / 9
     if (decimalPlaces) { // if there is an argument 'decimalPlaces' when calling the function
+        // undefined is considered to be false
         return celsius.toFixed(2)
     } else { // decimalPlaces == undefined
         return  celsius
