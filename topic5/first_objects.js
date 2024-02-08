@@ -22,3 +22,8 @@ user.roles.push('server admin')
 user.contact.location = 'Minneapolis' // add new property to the nested object
 
 console.log(user)
+
+// looping over all the properties
+for (let property in user) {
+    console.log(property, user[property])
+}
