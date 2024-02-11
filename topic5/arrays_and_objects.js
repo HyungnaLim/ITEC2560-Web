@@ -86,13 +86,6 @@ for (x=0; x<cats_and_owners.length; x++) {
 Source http://api.nobelprize.org/v1/prize.json?year=2017
 * */
 
-// TODO print the full name of the Literature Nobel laureate.
-// TODO print the ids of each of the Physics Nobel laureates. Your code should still work without modification if a laureate was added, or removed.
-// TODO write code to print the names of all of the prize categories (So your output would start physics, chemistry, medicine... ).
-// TODO write code to print the total number of prize categories
-// TODO write code to count the total number of laureates from 2017.
-//   have a good look at how the JSON is structured, and think about what loop(s) you'll need to write.
-
 
 let nobel_prize_winners_2017 = {
     "prizes":[
@@ -218,3 +211,50 @@ let nobel_prize_winners_2017 = {
         }
     ]
 }
+
+// TODO print the full name of the Literature Nobel laureate.
+let literatureLaureate = nobel_prize_winners_2017.prizes[3].laureates
+console.log(literatureLaureate[0].firstname + ' ' + literatureLaureate[0].surname)
+
+// TODO print the ids of each of the Physics Nobel laureates. Your code should still work without modification if a laureate was added, or removed.
+let physicsLaureates = nobel_prize_winners_2017.prizes[0].laureates
+physicsLaureates.forEach(function(item) {
+    console.log(item.id)
+})
+
+// TODO write code to print the names of all of the prize categories (So your output would start physics, chemistry, medicine... ).
+let prizes = nobel_prize_winners_2017.prizes
+prizes.forEach(function(item) {
+    console.log(item.category)
+})
+
+// TODO write code to print the total number of prize categories
+console.log(prizes.length)
+
+// TODO write code to count the total number of laureates from 2017.
+//   have a good look at how the JSON is structured, and think about what loop(s) you'll need to write.
+
+// solution 1
+let laureatesList = [] // set an empty list to collect laureates from each category
+prizes.forEach(function(item) {
+    laureatesList.push(item.laureates) // collect laureates - some are still arrays, having more than one laureate
+})
+
+let laureate = [] // set another empty list to collect laureates one by one
+laureatesList.forEach(function(item) {
+    for (x=0; x<item.length; x++) { // loop over all the laureates in the laureatesList
+         laureate.push(item[x]) // collect each laureate - this will allow extracting each laureate
+    }
+})
+
+console.log(laureate.length) // print the number of laureates in the list
+
+
+// solution 2
+let counter = 0 // set a counter
+prizes.forEach(function (prize) { // loop over each prize category
+    prize.laureates.forEach(function (laureate) { // another loop to get each laureate in laureates
+        counter++ // update counter each time the loop gets to a laureate
+    })
+})
+console.log(counter) // print the counter
