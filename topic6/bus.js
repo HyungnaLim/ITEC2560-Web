@@ -203,6 +203,8 @@ let bus_times = {
 ]
 }
 
+// Q. Can you make a departure board with bus number, description, and arrival time?
+
 let departureArray = bus_times.departures
 
 // looping over an array to print each departure

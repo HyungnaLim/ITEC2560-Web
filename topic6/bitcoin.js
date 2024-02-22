@@ -30,19 +30,19 @@ let bitcoinData = {
 }
 
 
-// Can you convert $100 into Bitcoin?
+// Q. Can you convert $100 into Bitcoin?
 
 let amountUSD = 100
 let USDtoBitcoin = amountUSD * bitcoinData.bpi.USD.rate_float
 console.log(amountUSD + " USD is equivalent to " + USDtoBitcoin + " bitcoin")
 
-// one bitcoin to USD
+// Q. one bitcoin to USD
 let amountBitcoin = 1
 let bitToUSD = amountBitcoin / bitcoinData.bpi.USD.rate_float
 console.log(amountBitcoin + " bitcoin is equivalent to " + bitToUSD + " USD")
 
 
-// Can you print (console.log) the currency descriptions and the rates, one per line?
+// Q. Can you print (console.log) the currency descriptions and the rates, one per line?
 
 for (let currency in bitcoinData.bpi) { // loop over every property in the bpi object
     let currencyData = bitcoinData.bpi[currency] // get the value for that property, an object with data about one currency
