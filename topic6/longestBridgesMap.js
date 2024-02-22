@@ -45,7 +45,7 @@ let chart = new Chart(context, {
     }
 })
 
-let chartColors = ['red', 'blue', 'yellowgreen', 'green', 'yellow']
+let chartColors = ['darkblue', 'blue', 'steelblue', 'skyblue', 'lightblue']
 
 bridges.forEach(function(bridge) {
     chart.data.labels.push(bridge.name);
