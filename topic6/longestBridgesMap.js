@@ -34,13 +34,23 @@ var longestBridgeIcon = L.icon({
 });
 
 // find the longest bridge from the array
-let longestBridge = bridges.reduce((prev, current) => (prev.span > current.span) ? prev : current);
+
+// solution 1 - using for loop
+let longestBridge = bridges[0]
+for (let i=0; i<bridges.length; i++) {
+    if (longestBridge.span < bridges[i]) {
+        longestBridge = bridges[i]
+    }
+}
+
+// solution 2 - using .reduce method
+let longestBridge2 = bridges.reduce((prev, current) => (prev.span > current.span) ? prev : current);
 
 // create marker on map for each bridge in the array using loop
 bridges.forEach(function(bridge) {
     if (bridge === longestBridge) { // assign a different color marker for the longest bridge
         L.marker(bridge.location, {icon: longestBridgeIcon})
-            .bindPopup(`<b>${bridge.name}</b><br>${bridge.city}<br><i>${bridge.span} meter</i>`)
+            .bindPopup(`<b>${bridge.name}</b><br>${bridge.city}<br><i>${bridge.span} meter<br>* the longest bridge in the list</i>`)
             .addTo(bridgeMap)
     } else {
         L.marker(bridge.location, {icon: bridgeIcon})
