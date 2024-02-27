@@ -106,7 +106,7 @@ let scoreAndLetterGrades = quizScores.map( score => {
 
 console.log(scoreAndLetterGrades)
 
-
+// TODO review from here
 let aScoresAndGrade = scoreAndLetterGrades.filter( scoreInfo => scoreInfo.grade == 'A')
 
 console.log(aScoresAndGrade)
