@@ -15,6 +15,13 @@
         timeElement.innerHTML = date
     }, 1000) // the function will run in interval with break (timeout argument in milliseconds)
     // timeElement will be updated every 1 second
+
+    // arrow annotation version
+    setInterval( () => { // if there's no argument for the callback function, leave the empty parenthesis
+        let date = Date()
+        timeElement.innerHTML = date
+    }, 1000)
+
 </script>
 
 </body>
