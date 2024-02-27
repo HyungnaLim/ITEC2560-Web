@@ -12,6 +12,12 @@
     setTimeout( function() {
         alert('Hello! I waited 3 seconds to show this!')
     }, 3000) // call back function, 3000 milliseconds
+
+    // this allows other functions in the code keep working,
+    // while delaying the call back function for certain amount of time
+    // this way it is easier to manage slow tasks in the code
+    // examples of slow task : fetching/processing data from API or database, loading image, etc
+
 </script>
 
 </body>
