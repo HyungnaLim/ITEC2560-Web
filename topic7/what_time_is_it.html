@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Interval</title>
+</head>
+<body>
+<h1>What time is it?</h1>
+<p id="time"></p>
+
+<script>
+    let timeElement = document.querySelector('#time')
+    setInterval(function(){ // call back function
+        let date = Date()
+        timeElement.innerHTML = date
+    }, 1000) // the function will run in interval with break (timeout argument in milliseconds)
+    // timeElement will be updated every 1 second
+</script>
+
+</body>
+</html>
