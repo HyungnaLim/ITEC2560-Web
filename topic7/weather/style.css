@@ -1,0 +1,8 @@
+body {
+    background-color: beige;
+}
+
+#weather-forecast, th, td {
+    border: 1px solid;
+    border-collapse: collapse;
+}
