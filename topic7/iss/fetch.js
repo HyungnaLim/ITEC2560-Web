@@ -50,7 +50,7 @@ function iss(attempts) { // set a function to fetch data from url
         let now = Date() // save the current date/time
         timeISSLocationFetched.innerHTML = `This is fetched at ${now}` // display on the page
 
-    }).catch((err) => { // catch block for error handling\
+    }).catch((err) => { // catch block for error handling
         attempts = attempts - 1 // subtract 1 from number of attempts
         console.log('ERROR!', err)
     }).finally( () => { // require empty parenthesis
