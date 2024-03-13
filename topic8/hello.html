@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello Vue</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <!-- vue will manage all the HTML here -->
+    <h1>Hello Vue</h1>
+    <p>
+        {{ messageWithExclamationPoints }}
+    </p>
+
+    <!-- v-on is like event handler  -->
+    <button v-on:click="addExclamationPoints">Add Exclamation Points</button>
+
+    <button v-on:click="clearExclamationPoints">Clear</button>
+</div>
+
+<script>
+
+    // set up vue app
+    const {createApp, ref, computed} = Vue
+
+    createApp({
+        setup() {
+            // define things the Vue app needs here
+
+            const message = ref('Hi') // reactive data, it works like a container that holds value inside
+            const numberOfExclamationPoints = ref(0)
+
+            function addExclamationPoints() {
+                if (numberOfExclamationPoints.value < 10) { // limit the max number of exclamation points
+                    // message.value = message.value + '!'
+                    numberOfExclamationPoints.value ++
+                } else {
+                    alert('No more exclamation point!')
+                }
+            }
+
+            function clearExclamationPoints() {
+                numberOfExclamationPoints.value = 0
+                // message.value = 'Hi'
+            }
+
+            // computed property - keep track of the change of the data
+            const messageWithExclamationPoints = computed( function() {
+                let computedMessage = message.value // string variable
+                // add ! based on numberOfExclamationPoints
+                for (let x = 0; x < numberOfExclamationPoints.value; x++) {
+                    computedMessage = computedMessage + '!'
+                }
+                return computedMessage
+            })
+
+            return{
+                // refs - reactive data
+                message,
+                numberOfExclamationPoints,
+
+                // computed properties
+                messageWithExclamationPoints,
+
+                // function definitions
+                addExclamationPoints,
+                clearExclamationPoints,
+            }
+        }
+    }).mount('#app') // connect to app div
+
+</script>
+
+</body>
+</html>
