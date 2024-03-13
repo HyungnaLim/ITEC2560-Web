@@ -52,3 +52,19 @@ console.log(address)
 // if you are not sure, use let
 // if you know you won't change data, use const
 // if you know you need to change data, use let
+
+
+// shortcut to create objects
+
+let number ='1234'
+let street = 'Hennepin Avenue'
+let city = 'Minneapolis'
+
+// Javascript assume property name when using variables
+let addressShortcut = {
+    number,
+    street,
+    city
+}
+
+console.log(addressShortcut)
