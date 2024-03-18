@@ -1,0 +1,9 @@
+Lab8 Q2:
+Property ... was accessed during render but is not defined on instance.
+What does this Vue warning message mean?
+Can you safely ignore it?
+What causes it, and how do you fix it?
+
+
+Answer:
+It typically happens when the vue cannot find the property because either they are not defined yet or it is somewhere vue cannot reach. Ignoring this warning would lead errors in app so it has to be fixed. To fix it, investigate codes related to the property that cause error and make sure that it is defined within the accessible scope without any issue such as typo.
