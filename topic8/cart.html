@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <style>
+        th, td {
+            width: 25%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <table>
+        <tr>
+            <th>Item</th>
+            <th>Unit Price</th>
+            <th>Quantity</th>
+            <th>total</th>
+        </tr>
+        <tr>
+            <td>{{name}}</td>
+            <td>{{unitPrice}}</td>
+            <td><input type="number" v-model="quantity"></td>
+            <td>{{total}}</td>
+        </tr>
+    </table>
+</div>
+
+<script>
+
+    const {createApp, ref, computed} = Vue
+
+    createApp({
+        setup() {
+            const name = ref('Hat')
+            const quantity = ref('1')
+            const unitPrice = ref('4.99')
+
+            const total = computed( function () {
+                const totalPrice = quantity.value * unitPrice.value
+                const formattedPrice = totalPrice.toFixed(2) // two decimal place
+                return formattedPrice
+            })
+
+            return {
+                name,
+                quantity,
+                unitPrice,
+                total
+            }
+        }
+    }).mount('#app')
+
+</script>
+
+</body>
+</html>
