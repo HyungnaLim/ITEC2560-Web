@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <h1>To Do List</h1>
+
+    <h2>Enter new task</h2>
+    <input v-model="newTask">
+    <button v-on:click="addTask">Add Task</button>
+
+    <h2>Task List</h2>
+    <ul>
+        <li v-for="task in taskList"> {{task}} </li>
+    </ul>
+
+    <button v-on:click="clearList">Clear List</button>
+</div>
+
+<script>
+    const {createApp, ref} = Vue
+
+    createApp({
+        setup() {
+            const taskList = ref(['Water plants', 'Pay cellphone bill', 'Wash floor'])
+            const newTask = ref('')
+
+            function addTask() {
+                if (newTask.value) { // if it has value
+                    taskList.value.push(newTask.value) // add newTask to the taskList
+                    newTask.value='' // clear the input box
+                }
+            }
+
+            function clearList() {
+                taskList.value = [] // clear the taskList
+            }
+
+            return {
+                taskList,
+                newTask,
+                addTask,
+                clearList
+            }
+        }
+    }).mount('#app')
+
+</script>
+
+</body>
+</html>
