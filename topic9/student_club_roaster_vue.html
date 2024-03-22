@@ -171,9 +171,8 @@
             }
 
             const removeSelectedStudents = () => {
-                // Remove all students with selected = true from the studentList. You can do this with filter,
-                // or you can make a new empty array, loop over the studentList, and copy all selected = false students
-                // to the new list, then replace the value of studentList with the new array
+                // Remove all students with selected = true from the studentList using filter
+                studentList.value = studentList.value.filter(student => student = !student.selected)
             }
 
 
