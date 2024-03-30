@@ -40,23 +40,34 @@ fetch(url).then(function (response) {
     let periodsArray = propertiesObject.periods
 
     periodsArray.forEach( function(oneForecastPeriodObject) {
+        // read data from the object in the response
         let timeForForecast = oneForecastPeriodObject.name
         let temperature = oneForecastPeriodObject.temperature
+        let iconURL = oneForecastPeriodObject.icon
+        let iconImg = "<img src =" + iconURL + ">"
+        let detailedForecast = oneForecastPeriodObject.detailedForecast
 
+        // create a new tr, td element for data
         let newTableRow = document.createElement('tr')
         let timeTableData = document.createElement('td')
-        timeTableData.innerHTML = timeForForecast
-
         let temperatureTableData = document.createElement('td')
-        temperatureTableData.innerHTML = temperature
+        let iconTableData = document.createElement('td')
+        let detailedForecastTableData = document.createElement('td')
 
+        // set innerHTML to string data from the api
+        timeTableData.innerHTML = timeForForecast
+        temperatureTableData.innerHTML = temperature
+        iconTableData.innerHTML = iconImg
+        detailedForecastTableData.innerHTML = detailedForecast
+
+        // add a new td elements to the newTableRow
         newTableRow.appendChild(timeTableData)
         newTableRow.appendChild(temperatureTableData)
+        newTableRow.appendChild(iconTableData)
+        newTableRow.appendChild(detailedForecastTableData)
 
+        // add the newTableRow to the weather table
         weatherDataTable.appendChild(newTableRow)
-
-        //TODO how about images? and detailed forecast (extra credit)
-
 
     })
 })
