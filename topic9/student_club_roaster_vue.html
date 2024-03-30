@@ -151,7 +151,7 @@
 
                 // Check the length of errors. If it is more than 0, show an alert with the error message(s)
                 if (errors.value.length > 0) {
-                    alert(errors.value.join('\n'))
+                    alert("Errors:\n" + errors.value.join('\n'))
                 } else {
                     // Create a new student object with properties name, id, gpa, selected.
                     // Set name to newStudentName's value
