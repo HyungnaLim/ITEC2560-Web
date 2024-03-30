@@ -44,7 +44,7 @@ fetch(url).then(function (response) {
         let timeForForecast = oneForecastPeriodObject.name
         let temperature = oneForecastPeriodObject.temperature
         let iconURL = oneForecastPeriodObject.icon
-        let iconImg = "<img src =" + iconURL + ">"
+        let iconImg = `<img src ="${iconURL}">`
         let detailedForecast = oneForecastPeriodObject.detailedForecast
 
         // create a new tr, td element for data
