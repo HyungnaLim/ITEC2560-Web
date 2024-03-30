@@ -1,0 +1,6 @@
+Part 3, How is Vue and Vanilla JavaScript different? 2 points
+Compare your solution for part 2 to the earlier Student Club Roster. 
+What differences do you see?
+Which one do you prefer? Why? 
+Create a new text file with your response. Write about 2 paragraphs.
+
