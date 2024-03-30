@@ -69,5 +69,7 @@ fetch(url).then(function (response) {
         // add the newTableRow to the weather table
         weatherDataTable.appendChild(newTableRow)
 
+    }).catch((err) => {
+        console.log(err)
     })
 })
