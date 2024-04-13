@@ -4,3 +4,10 @@ What differences do you see?
 Which one do you prefer? Why? 
 Create a new text file with your response. Write about 2 paragraphs.
 
+When using JavaScript, you have to use queryselector to connect any input from HTML elements to the script.
+Whereas with Vue, you can create reactive data and connect by using v-model.
+The reactive data will be automatically updated as the changes are made, instead of having to reset them manually.
+
+Comparing it to the Student Club Roster example, both solutions look pretty similar to me since it is a pretty small project.
+However, I would prefer to use Vue for larger and more complex projects, especially with the component structure that Vue supports.
+Also, the code structure of Vue is easier to read since you can check the list of return properties and functions in one place.
