@@ -11,6 +11,10 @@ const weight = ref('')
 const emit = defineEmits(['stats-entered'])
 
 function statsEntered() {
+  // simple validation - optional
+
+
+  // send the data to App.vue to do math
   emit('stats-entered', height.value, weight.value)
 }
 
@@ -19,12 +23,12 @@ function statsEntered() {
 <template>
 
   <label>Height </label>
-  <input v-model="height">
+  <input v-model="height" type="number">
 
   <br>
 
   <label>Weight </label>
-  <input v-model="weight">
+  <input v-model="weight" type="number">
 
   <br>
 
