@@ -11,9 +11,6 @@ const weight = ref('')
 const emit = defineEmits(['stats-entered'])
 
 function statsEntered() {
-  // simple validation - optional
-
-
   // send the data to App.vue to do math
   emit('stats-entered', height.value, weight.value)
 }
@@ -21,6 +18,9 @@ function statsEntered() {
 </script>
 
 <template>
+
+  <div id="form">
+  <h2>Enter your height and weight</h2>
 
   <label>Height </label>
   <input v-model="height" type="number">
@@ -33,14 +33,20 @@ function statsEntered() {
   <br>
 
   <button v-on:click="statsEntered">Calculate</button>
+  </div>
 
 </template>
 
 <style scoped>
 
 button {
-  background-color: skyblue;
+  background-color: indianred;
   margin: 10px;
+}
+
+#form {
+  border: solid 3px red;
+  background-color: mistyrose;
 }
 
 </style>

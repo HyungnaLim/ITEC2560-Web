@@ -1,5 +1,6 @@
 <script setup>
-import BodyMassIndexForm from './components/BodyMassIndexForm.vue'
+import BodyMassIndexForm from "./components/BodyMassIndexForm.vue";
+import { ref } from 'vue'
 
 const bmi = ref('')
 
@@ -7,30 +8,35 @@ const heightEntered = ref('')
 const weightEntered = ref('')
 
 const calculateBMI = (height, weight) => {
-  alert('todo - do math!')
   heightEntered.value = height
   weightEntered.value = weight
-  bmi.value = height // todo do math
+
+  // calculate bmi
+  bmi.value = (weight / ( height * height )).toFixed(2)
 }
 
 </script>
 
 <template>
-  <div>
 
+  <div id="app">
     <h1>Body Mass Index Calculator</h1>
 
-  </div>
+    <BodyMassIndexForm v-on:stats-entered="calculateBMI"/>
+    <br>
 
-  <BodyMassIndexForm v-on:stats-entered="calculateBMI"/>
-
-  <div>
-  The BMI calculated is {{bmi}}
-  Your height was {{heightEntered}}, weight was {{weightEntered}}
+    <div>
+      Your BMI is <b>{{bmi}}</b>
+    </div>
   </div>
 
 </template>
 
 <style scoped>
+
+#app {
+  border: solid 3px blue;
+  background-color: lightblue;
+}
 
 </style>
