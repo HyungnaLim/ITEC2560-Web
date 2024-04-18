@@ -1,10 +1,15 @@
 <script setup>
+// import the component
 import BodyMassIndexPinia from './components/BodyMassIndexPinia.vue'
+
+// import Pinia store
 import {useStatsStore} from "./stores/StatsStore.js";   // be aware of the directory location
 import {storeToRefs} from "pinia";
 
+// get access to StatsStore
 const StatsStore = useStatsStore()
 
+// get access to calculatedBMI
 const {calculatedBMI} = storeToRefs(StatsStore)
 
 </script>
