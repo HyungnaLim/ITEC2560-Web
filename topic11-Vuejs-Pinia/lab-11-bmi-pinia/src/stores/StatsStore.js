@@ -8,7 +8,7 @@ export const useStatsStore = defineStore('stat', () => {
     const weight = ref('')
 
     const calculatedBMI = computed( () => {
-        const bmi = weight / ( height * height )
+        const bmi = (weight / ( height * height )).toFixed(2)
         return bmi
     } )
 

@@ -31,6 +31,7 @@ export const useStudentStore = defineStore('students', () => {
             // check all student in the studentList, keep the student if the argument return true, if not filter out
             return studentToDelete !== student
         })
+        mostRecentStudent.value = {}  // reset most recent message, so no message is showing when someone's deleted
     }
 
     function arrivedOrLeft(student) {

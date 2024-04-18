@@ -18,7 +18,7 @@ const {calculatedBMI} = storeToRefs(StatsStore)
   <BodyMassIndexPinia/>
 
   <div>
-    You BMI is {{ calculatedBMI }}
+    Your BMI is {{ calculatedBMI }}
   </div>
 
 </template>
