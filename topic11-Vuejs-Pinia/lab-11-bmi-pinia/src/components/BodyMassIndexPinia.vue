@@ -8,24 +8,19 @@ import {storeToRefs} from "pinia";
 const StatsStore = useStatsStore()
 
 // allow access to the height reactive data
-const { height } = storeToRefs(StatsStore)
-const { weight } = storeToRefs(StatsStore)
+const { height, weight } = storeToRefs(StatsStore)
 
 </script>
 
 <template>
 
-  <label>Height </label>
+  <label>Height in meters </label>
   <input v-model="height" type="number">
 
   <br>
 
-  <label>Weight </label>
+  <label>Weight in kilograms </label>
   <input v-model="weight" type="number">
-
-  <br>
-
-  <button>Calculate</button>
 
 </template>
 
