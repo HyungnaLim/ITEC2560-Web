@@ -22,12 +22,12 @@ function statsEntered() {
   <div id="form">
   <h2>Enter your height and weight</h2>
 
-  <label>Height </label>
+  <label>Height in meters </label>
   <input v-model="height" type="number">
 
   <br>
 
-  <label>Weight </label>
+  <label>Weight in kilograms </label>
   <input v-model="weight" type="number">
 
   <br>
