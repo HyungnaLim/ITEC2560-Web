@@ -1,12 +1,21 @@
-<h1>Body Mass Index</h1>
+<!-- home page -->
 
-<p>Enter your data:</p>
+<p><b>Enter your data :</b></p>
 
-<form>
-    <label>Enter height in meters</label>
-    <input name="height">
+<form action="/calculate" method="POST">  <!-- post request when the form is submitted -->
+    <label>Height in meters :</label>
+    <label>
+        <input name="height" type="number" step="0.01" min="0" required>
+    </label>
+
     <br>
-    <label>Enter weight in kg</label>
-    <input name="weight">
-    <input type="submit">
+
+    <label>Weight in kg :</label>
+    <label>
+        <input name="weight" type="number" step="0.01" min="0" required>
+    </label>
+
+    <br><br>
+
+    <button type="submit" name="calculate">Calculate</button>
 </form>
