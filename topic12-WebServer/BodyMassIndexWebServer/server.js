@@ -7,11 +7,11 @@
 
 const path = require('path')
 const express = require('express')
+
 const bodyParser = require('body-parser')
 
 // routing is figuring out what page the user wants
 // typically based on a URL (browser address bar)
-
 const indexRouter = require('./routes')
 
 const app = express()
@@ -28,7 +28,7 @@ app.set('views', path.join(__dirname, 'views'))
 // "views" are web pages, "hbs" is handlebars
 app.set('view engine', 'hbs')
 
-// use indexRouter for requests
+// use indexRouter for all request
 app.use('/', indexRouter)
 
 // run server using port 3000 unless the port to use is specified
