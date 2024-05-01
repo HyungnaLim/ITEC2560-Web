@@ -13,11 +13,11 @@ router.get('/', function(req, res, next) {
 
 // get request for calculate
 router.post('/calculate', function(req, res) {
-    const formData = req.body
-    const height = formData.height
-    const weight = formData.weight
-    const bmi = (weight / (height * height)).toFixed(2)
-    res.render('result.hbs', {bmi})
+    const formData = req.body  // save data from request
+    const height = formData.height  // save height
+    const weight = formData.weight  // save weight
+    const bmi = (weight / (height * height)).toFixed(2)  // calculate bmi
+    res.render('result.hbs', {bmi})  // render result page with bmi data
 })
 
 module.exports = router
