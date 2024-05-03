@@ -1,13 +1,14 @@
 const express = require('express')  // import express
 const apiRouter = require('./routes/api')
 
+const path = require('path')
+
 const app = express()  // create web app server
 
 // use console command 'npx vite build' to creat dist folder and static files manually before writing this code
 // access static files (vue app)
-const path = require('path')
 const staticFilePath = path.join(__dirname, 'client', 'dist')
-staticFiles = express.static(staticFilePath)
+const staticFiles = express.static(staticFilePath)
 app.use('/', staticFiles)  // request to home page, serve static file (index.html vue app)
 
 app.use(express.json())
