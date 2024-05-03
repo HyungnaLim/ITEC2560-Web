@@ -6,48 +6,60 @@ const studentAPI = mande('api/students')
 
 export const useStudentStore = defineStore('students', () => {
 
-    const studentList = ref([])
+    const sortedStudents = ref([])
 
     const mostRecentStudent = ref( {} )  // empty object
+
+    const addNewStudentErrors = ref([])
 
     function getAllStudents() {
         // make a API request to get all students and save in store - studentList
         studentAPI.get().then( students => {  // students is the json response from the API
-            studentList.value = students
+            sortedStudents.value = students
+        }).catch(err => {
+            console.log(err)
         })
     }
 
     const studentCount = computed( () => {
-        return studentList.value.length
-    })
-
-    // sort student list by student name
-    const sortedStudents = computed( () => {
-        return studentList.value.toSorted( (student1, student2) => {
-            return student1.name.localeCompare(student2.name)
-        } )
+        return sortedStudents.value.length
     })
 
     function addNewStudent(student) {
-        studentList.value.push(student)
+        // make api call to add new student
+        // call getAllStudent to re-request list of students from API server
+        studentAPI.post(student).then( () => {
+            getAllStudents()
+        }).catch(err => {  // error handling
+            addNewStudentErrors.value = err.body  // store error responses
+        })
     }
 
     function deleteStudent(studentToDelete) {
-        studentList.value = studentList.value.filter((student) => {
-            // check all student in the studentList, keep the student if the argument return true, if not filter out
-            return studentToDelete !== student
+        // make api request
+        const deleteStudentAPI = mande(`/api/students/${studentToDelete.id}`)
+        deleteStudentAPI.delete().then( () => {
+            getAllStudents()
+        }).catch(err => {
+            console.log(err)
         })
-        mostRecentStudent.value = {}  // reset most recent message, so no message is showing when someone's deleted
     }
 
     function arrivedOrLeft(student) {
-        mostRecentStudent.value = student
+        // make api request
+        const editStudentAPI = mande(`/api/students/${student.id}`)
+        editStudentAPI.patch(student).then( () => {
+            getAllStudents()
+        }).catch(err => {
+            console.log(err)
+        })
     }
 
     return {
         // reactive data
-        studentList,
+        sortedStudents,
         mostRecentStudent,
+        addNewStudentErrors,
 
         // functions
         addNewStudent,
@@ -57,7 +69,6 @@ export const useStudentStore = defineStore('students', () => {
 
         // computed properties
         studentCount,
-        sortedStudents
     }
 
 })

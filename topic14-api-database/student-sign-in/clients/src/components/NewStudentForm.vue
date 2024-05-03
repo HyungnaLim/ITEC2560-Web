@@ -1,9 +1,10 @@
 <script setup>
 
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 
 // access to the student store
 import { useStudentStore } from "../stores/StudentStore.js";
+import {storeToRefs} from "pinia";
 const studentStore = useStudentStore()
 
 const newStudentName = ref('')
@@ -33,6 +34,16 @@ function addStudent() {
     newStarID.value = ''
   }
 }
+
+// access addNewStudentErrors from studentStore
+const {addNewStudentErrors} = storeToRefs(studentStore)
+
+// error handling
+watch(addNewStudentErrors, () => {
+  if (addNewStudentErrors.value && addNewStudentErrors.value.length > 0) {  // if there is error
+    alert(addNewStudentErrors.value.join('\n'))  // display error message on pop up alert
+  }
+})
 
 
 </script>

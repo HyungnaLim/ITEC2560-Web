@@ -1,15 +1,27 @@
 module.exports = (sequelize, DataTypes) => {
     // define the model
     const Student = sequelize.define('Student', {
-        //define the columns in the database - give them a name and a type
+        //define the columns in the database - give them a name, type, constraints
         name: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false,
+            validate: {
+                notEmpty: false
+            }
         },
         starID: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true,
+            validate: {
+                notEmpty: false
+            }
+            // optional - constraint for id format
         },
         present: {
-            type: DataTypes.BOOLEAN
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
+            default: false
         }
     })
 
