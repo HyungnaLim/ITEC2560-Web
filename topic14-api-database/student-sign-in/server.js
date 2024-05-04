@@ -7,7 +7,7 @@ const app = express()  // create web app server
 
 // use console command 'npx vite build' to creat dist folder and static files manually before writing this code
 // access static files (vue app)
-const staticFilePath = path.join(__dirname, 'clients', 'dist')
+const staticFilePath = path.join(__dirname, 'clients', 'dist')  // make sure the name of directory matches
 const staticFiles = express.static(staticFilePath)
 app.use('/', staticFiles)  // request to home page, serve static file (index.html vue app)
 
