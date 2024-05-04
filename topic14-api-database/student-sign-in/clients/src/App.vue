@@ -19,6 +19,8 @@ onMounted( () => {
 
 <template>
 
+  <h1>Student Sign In</h1>
+
   <NewStudentForm/>
   <StudentTable/>
   <StudentMessage/>
@@ -26,5 +28,9 @@ onMounted( () => {
 </template>
 
 <style scoped>
+
+h1 {
+  margin: 10px
+}
 
 </style>
