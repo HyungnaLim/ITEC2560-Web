@@ -5,8 +5,9 @@
   },
 
   "production": {
-    "username": "YOUR_USERNAME",
-    "host": "YOUR_DATABASE_SERVER.database.windows.net",
+    "username": "hyungna",
+    "host": "student-sign-in-database-server-hyungna.database.windows.net",
+    "database": "student-sign-in-database",
     "dialect": "mssql"
   }
 }
